@@ -1,5 +1,5 @@
 node {
-     
+   try{  
   stage('Git-Checkout') {
    git 'https://github.com/imbhascker13/qa_analysis_for_bikenbrands.git'
   }
@@ -31,8 +31,7 @@ stage('Geting Ready for Docker-Stage-Deployment') {
   notify("Error ${err}")
   currentBuild.result = 'FAILURE'
 }
-
-
+}
 def notify(status){
     emailext (
 	to: "bhaskarreddygbr7@gmail.com",
