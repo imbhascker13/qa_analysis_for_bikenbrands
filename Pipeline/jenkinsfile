@@ -27,11 +27,11 @@ stage('Geting Ready for Docker-Stage-Deployment') {
   }
   }
  notify('Job Completed')   
-} catch (err) {
+ }catch (err) {
   notify("Error ${err}")
   currentBuild.result = 'FAILURE'
 }
-}
+
 
 def notify(status){
     emailext (
@@ -42,4 +42,3 @@ def notify(status){
 		)
 	}
   
-  }
